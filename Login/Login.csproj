@@ -1,0 +1,483 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2DD0F23-7E60-42BF-B73F-E5A4FB3E35C1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Login</RootNamespace>
+    <AssemblyName>Login</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress>false</Use64BitIISExpress>
+    <IISExpressSSLPort>44352</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.IconPacks.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.IconPacks.RemixIcon.4.11.0\lib\net47\MahApps.Metro.IconPacks.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.IconPacks.RemixIcon, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.IconPacks.RemixIcon.4.11.0\lib\net47\MahApps.Metro.IconPacks.RemixIcon.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Client.Policy, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.Office.Client.Policy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Client.TranslationServices, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.Office.Client.TranslationServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.SharePoint.Tools, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.Office.SharePoint.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Online.SharePoint.Client.Tenant, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.Online.SharePoint.Client.Tenant.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ProjectServer.Client, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.ProjectServer.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.DocumentManagement, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.SharePoint.Client.DocumentManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Publishing, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.SharePoint.Client.Publishing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Search, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.SharePoint.Client.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Search.Applications, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.SharePoint.Client.Search.Applications.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Taxonomy, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.SharePoint.Client.Taxonomy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.UserProfiles, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.SharePoint.Client.UserProfiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.WorkflowServices, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.22208.12000\lib\net45\Microsoft.SharePoint.Client.WorkflowServices.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\COPYING.txt" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fonts.css" />
+    <Content Include="fonts\fonts.min.css" />
+    <Content Include="fonts\NEWS.txt" />
+    <Content Include="fonts\remixicon.css" />
+    <Content Include="Global.asax" />
+    <Content Include="images\y6.jpg" />
+    <Content Include="images\1648707142.svg" />
+    <Content Include="images\bar-chart-grouped-line.png" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\bookmark-fill.png" />
+    <Content Include="images\chat-check-line.png" />
+    <Content Include="images\dashboard-3-line.png" />
+    <Content Include="images\ee5.jpg" />
+    <Content Include="images\f6.jpg" />
+    <Content Include="images\ff.jpg" />
+    <Content Include="images\file-2-line.png" />
+    <Content Include="images\function-fill.png" />
+    <Content Include="images\home-3-fill.png" />
+    <Content Include="images\image-add-line.png" />
+    <Content Include="images\karmand-iran-green.svg" />
+    <Content Include="images\layout-4-line.png" />
+    <Content Include="images\menu-2-fill.png" />
+    <Content Include="images\p1.png" />
+    <Content Include="images\save-3-fill.png" />
+    <Content Include="images\star-line.png" />
+    <Content Include="images\w1.jpg" />
+    <Content Include="images\y.jpg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\easing.js" />
+    <Content Include="js\easyResponsiveTabs.js" />
+    <Content Include="js\jquery-1.11.2.min.js" />
+    <Content Include="js\jquery-2.2.3.min.js" />
+    <Content Include="js\jquery.flexslider.js" />
+    <Content Include="js\jzBox.js" />
+    <Content Include="js\move-top.js" />
+    <Content Include="js\numscroller-1.0.js" />
+    <Content Include="js\SmoothScroll.min.js" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Styles\bootstrap.css" />
+    <Content Include="Styles\flexslider.css" />
+    <Content Include="Styles\font-awesome.css" />
+    <Content Include="Styles\script6.js" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Styles\style2.css" />
+    <Content Include="Styles\style3.css" />
+    <Content Include="Styles\style4.css" />
+    <Content Include="Styles\style6.css" />
+    <Content Include="Styles\style9.css" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Employee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employees.cs" />
+    <Compile Include="Models\UserAccounts.cs" />
+    <Compile Include="Models\Yearmonth.cs" />
+    <Compile Include="month.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="year.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\BBadr.eot" />
+    <Content Include="fonts\BBadr.ttf" />
+    <Content Include="fonts\BBadr.woff" />
+    <Content Include="fonts\BBaran.eot" />
+    <Content Include="fonts\BBaran.ttf" />
+    <Content Include="fonts\BBaran.woff" />
+    <Content Include="fonts\BBardiya.eot" />
+    <Content Include="fonts\BBardiya.ttf" />
+    <Content Include="fonts\BBardiya.woff" />
+    <Content Include="fonts\BCompset.eot" />
+    <Content Include="fonts\BCompset.ttf" />
+    <Content Include="fonts\BCompset.woff" />
+    <Content Include="fonts\BDavat.eot" />
+    <Content Include="fonts\BDavat.ttf" />
+    <Content Include="fonts\BDavat.woff" />
+    <Content Include="fonts\BElham.eot" />
+    <Content Include="fonts\BElham.ttf" />
+    <Content Include="fonts\BElham.woff" />
+    <Content Include="fonts\BEsfehanBold.eot" />
+    <Content Include="fonts\BEsfehanBold.ttf" />
+    <Content Include="fonts\BEsfehanBold.woff" />
+    <Content Include="fonts\BFantezy.eot" />
+    <Content Include="fonts\BFantezy.ttf" />
+    <Content Include="fonts\BFantezy.woff" />
+    <Content Include="fonts\BFarnaz.eot" />
+    <Content Include="fonts\BFarnaz.ttf" />
+    <Content Include="fonts\BFarnaz.woff" />
+    <Content Include="fonts\BFerdosi.eot" />
+    <Content Include="fonts\BFerdosi.ttf" />
+    <Content Include="fonts\BFerdosi.woff" />
+    <Content Include="fonts\BHamid.eot" />
+    <Content Include="fonts\BHamid.ttf" />
+    <Content Include="fonts\BHamid.woff" />
+    <Content Include="fonts\BHelal.eot" />
+    <Content Include="fonts\BHelal.ttf" />
+    <Content Include="fonts\BHelal.woff" />
+    <Content Include="fonts\BHoma.eot" />
+    <Content Include="fonts\BHoma.ttf" />
+    <Content Include="fonts\BHoma.woff" />
+    <Content Include="fonts\BJadidBold.eot" />
+    <Content Include="fonts\BJadidBold.ttf" />
+    <Content Include="fonts\BJadidBold.woff" />
+    <Content Include="fonts\BJalal.eot" />
+    <Content Include="fonts\BJalal.ttf" />
+    <Content Include="fonts\BJalal.woff" />
+    <Content Include="fonts\BKoodakBold.eot" />
+    <Content Include="fonts\BKoodakBold.ttf" />
+    <Content Include="fonts\BKoodakBold.woff" />
+    <Content Include="fonts\BKourosh.eot" />
+    <Content Include="fonts\BKourosh.ttf" />
+    <Content Include="fonts\BKourosh.woff" />
+    <Content Include="fonts\BLotus.eot" />
+    <Content Include="fonts\BLotus.ttf" />
+    <Content Include="fonts\BLotus.woff" />
+    <Content Include="fonts\BMahsa.eot" />
+    <Content Include="fonts\BMahsa.ttf" />
+    <Content Include="fonts\BMahsa.woff" />
+    <Content Include="fonts\BMehrBold.eot" />
+    <Content Include="fonts\BMehrBold.ttf" />
+    <Content Include="fonts\BMehrBold.woff" />
+    <Content Include="fonts\BMitra.eot" />
+    <Content Include="fonts\BMitra.ttf" />
+    <Content Include="fonts\BMitra.woff" />
+    <Content Include="fonts\BMorvarid.eot" />
+    <Content Include="fonts\BMorvarid.ttf" />
+    <Content Include="fonts\BMorvarid.woff" />
+    <Content Include="fonts\BNarm.eot" />
+    <Content Include="fonts\BNarm.ttf" />
+    <Content Include="fonts\BNarm.woff" />
+    <Content Include="fonts\BNasimBold.eot" />
+    <Content Include="fonts\BNasimBold.ttf" />
+    <Content Include="fonts\BNasimBold.woff" />
+    <Content Include="fonts\BNazanin.eot" />
+    <Content Include="fonts\BNazanin.ttf" />
+    <Content Include="fonts\BNazanin.woff" />
+    <Content Include="fonts\BRoya.eot" />
+    <Content Include="fonts\BRoya.ttf" />
+    <Content Include="fonts\BRoya.woff" />
+    <Content Include="fonts\BSetarehBold.eot" />
+    <Content Include="fonts\BSetarehBold.ttf" />
+    <Content Include="fonts\BSetarehBold.woff" />
+    <Content Include="fonts\BShiraz.eot" />
+    <Content Include="fonts\BShiraz.ttf" />
+    <Content Include="fonts\BShiraz.woff" />
+    <Content Include="fonts\BSinaBold.eot" />
+    <Content Include="fonts\BSinaBold.ttf" />
+    <Content Include="fonts\BSinaBold.woff" />
+    <Content Include="fonts\BTabassom.eot" />
+    <Content Include="fonts\BTabassom.ttf" />
+    <Content Include="fonts\BTabassom.woff" />
+    <Content Include="fonts\BTehran.eot" />
+    <Content Include="fonts\BTehran.ttf" />
+    <Content Include="fonts\BTehran.woff" />
+    <Content Include="fonts\BTitrBold.eot" />
+    <Content Include="fonts\BTitrBold.ttf" />
+    <Content Include="fonts\BTitrBold.woff" />
+    <Content Include="fonts\BTitrTGEBold.eot" />
+    <Content Include="fonts\BTitrTGEBold.ttf" />
+    <Content Include="fonts\BTitrTGEBold.woff" />
+    <Content Include="fonts\BTraffic.eot" />
+    <Content Include="fonts\BTraffic.ttf" />
+    <Content Include="fonts\BTraffic.woff" />
+    <Content Include="fonts\BVahidBold.eot" />
+    <Content Include="fonts\BVahidBold.ttf" />
+    <Content Include="fonts\BVahidBold.woff" />
+    <Content Include="fonts\BYagut.eot" />
+    <Content Include="fonts\BYagut.ttf" />
+    <Content Include="fonts\BYagut.woff" />
+    <Content Include="fonts\BYas.eot" />
+    <Content Include="fonts\BYas.ttf" />
+    <Content Include="fonts\BYas.woff" />
+    <Content Include="fonts\BYekan.eot" />
+    <Content Include="fonts\BYekan.ttf" />
+    <Content Include="fonts\BYekan.woff" />
+    <Content Include="fonts\BZar.eot" />
+    <Content Include="fonts\BZar.ttf" />
+    <Content Include="fonts\BZar.woff" />
+    <Content Include="fonts\BZiba.eot" />
+    <Content Include="fonts\BZiba.ttf" />
+    <Content Include="fonts\BZiba.woff" />
+    <Content Include="fonts\COPYING" />
+    <Content Include="fonts\elham.ttf" />
+    <Content Include="fonts\freefarsi-mono.ttf" />
+    <Content Include="fonts\freefarsi.ttf" />
+    <Content Include="fonts\freefarsib.ttf" />
+    <Content Include="fonts\freefarsibi.ttf" />
+    <Content Include="fonts\freefarsii.ttf" />
+    <Content Include="fonts\homa.ttf" />
+    <Content Include="fonts\IranianSans.eot" />
+    <Content Include="fonts\IranianSans.ttf" />
+    <Content Include="fonts\IranianSans.woff" />
+    <Content Include="fonts\irsans.ttf" />
+    <Content Include="fonts\koodak.ttf" />
+    <Content Include="fonts\nazli.ttf" />
+    <Content Include="fonts\nazlib.ttf" />
+    <Content Include="fonts\NEWS" />
+    <Content Include="fonts\roya.ttf" />
+    <Content Include="fonts\royab.ttf" />
+    <Content Include="fonts\terafik.ttf" />
+    <Content Include="fonts\terafikb.ttf" />
+    <Content Include="fonts\titr.ttf" />
+    <Content Include="fonts\remixicon.eot" />
+    <Content Include="fonts\remixicon.less" />
+    <Content Include="fonts\remixicon.ttf" />
+    <Content Include="fonts\remixicon.woff" />
+    <Content Include="fonts\remixicon.woff2" />
+    <None Include="packages.config" />
+    <Content Include="Views\_LayoutPage1.cshtml" />
+    <Content Include="Views\Account\Error.cshtml" />
+    <Content Include="Views\_LayoutPage3.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\getDropDown.cshtml" />
+    <Content Include="Views\Account\submit.cshtml" />
+    <Content Include="Views\Shared\_my1.cshtml" />
+    <Content Include="Views\Shared\my2.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56629</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44352/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

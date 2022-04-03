@@ -1,0 +1,42 @@
+﻿@model Login.Models.Yearmonth
+@{ ViewBag.Title = "انتخاب ماه و سال";
+                Layout = "~/Views/Shared/_my1.cshtml";
+ }
+<center>
+    <h2>انتخاب ماه و سال</h2>
+</center>
+<div class="w3ls-login box box--big">
+    <form action="submit" method="post">
+        <div class="agile-field-txt" style="text-align:center">
+            @if (ViewBag.monthlist != null)
+            {
+@Html.DropDownListFor(model => model.selyearId, ViewBag.yearlist as SelectList, "--انتخاب سال", new { @class = "form-control" })}
+            @if (ViewBag.monthlist != null)
+            {
+@Html.DropDownListFor(model => model.selmonthId, ViewBag.monthlist as SelectList, "--انتخاب ماه", new { @class = "form-control" })}
+        </div>
+        <br /><div style="text-align:center">
+    <input type="submit" value="انتخاب">
+</div>
+    </form>
+
+    <input type="submit" value="نمایش جدول" class="btn1" hidden>
+
+    <center style="padding:20px">
+        <button class="btn2" href="">
+            <a href="@Url.Action("ExporttoExcel","Account")">دانلود اکسل حقوق</a>
+        </button>
+        <script>
+            document.querySelector('.btn2').style.display = 'none';
+            document.querySelector('.btn1').addEventListener('click', showBtn);
+
+            function showBtn(e) {
+                document.querySelector('.btn2').style.display = 'block';
+                e.preventDefault();
+            }
+        </script>
+    </center>
+</div>
+
+
+

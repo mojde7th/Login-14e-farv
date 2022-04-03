@@ -1,0 +1,253 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>سامانه دریافت فایل</title>
+    <link rel='stylesheet' href='https://unpkg.com/css-pro-layout@1.1.0/dist/css/css-pro-layout.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css'>
+    <link rel="stylesheet" href="~/Styles/style6.css">
+</head>
+<body style="direction:rtl">
+    <!-- partial:index.partial.html -->
+    <div class="layout has-sidebar fixed-sidebar fixed-header">
+        <aside id="sidebar" class="sidebar break-point-lg has-bg-image">
+            <div class="image-wrapper">
+                @*<img src="~/images/ee5.jpg" />*@
+                <img src="~/images/y6.jpg" />
+            </div>
+            <div class="sidebar-layout">
+                <div class="sidebar-header" style="direction:rtl;justify-content:center;">
+                    <span style="
+                text-transform: uppercase;
+                font-size: 15px;
+                letter-spacing: 3px;
+                font-weight: bold;
+              ">فهرست</span>
+                    <!--<br />
+                    <div class="layout" style="color:white;justify-content:left;direction:ltr">-->
+
+                        @*<header class="header" style="color:white">
+                            <a id="btn-collapse" href="#">
+                                <i class="ri-menu-line ri-xl" style="color:white"></i>
+                            </a>
+
+                            <a id="btn-toggle" href="#" class="sidebar-toggler break-point-lg">
+                                <i class="ri-menu-line ri-xl"></i>
+                            </a>
+                        </header>*@
+
+                    <!--</div>-->
+                </div>
+
+                <div class="sidebar-content">
+                    <nav class="menu open-current-submenu">
+                        <ul>
+                            <li class="menu-item sub-menu">
+                                <a href="#">
+                                    <span class="menu-icon">
+                                        <i class="ri-save-3-fill"></i>
+                                    </span>
+                                    @*<span class="iconify" data-icon="flat-color-icons:video-call"></span>*@
+                                    <span class="menu-title">ویدیو آموزشی</span>
+                                    <span class="menu-suffix">&#x1F3A6;</span>
+                                </a>
+                                <div class="sub-menu-list">
+                                    <ul>
+                                        <li class="menu-item">
+                                            <a href="#">
+                                                <span class="menu-title">توضیحات 1</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="menu-item sub-menu">
+                                            <a href="#">
+                                                <span class="menu-title">توضیحات 2</span>
+                                            </a>
+                                            <div class="sub-menu-list">
+                                                <ul>
+                                                    <li class="menu-item">
+                                                        <a href="#">
+                                                            <span class="menu-title">فرم 1</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="#">
+                                                            <span class="menu-title">فرم 2</span>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu-item sub-menu">
+                                <a href="#">
+                                    <span class="menu-icon">
+                                        <i class="ri-bar-chart-2-fill"></i>
+                                    </span>
+                                    <span class="menu-title">بارگذاری‌های پیشین</span>
+
+                                </a>
+
+                                <div class="sub-menu-list">
+                                    <ul>
+                                        <li class="menu-item">
+                                            <a href="#">
+                                                <span class="menu-title">گزارش 1</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="#">
+                                                <span class="menu-title">گزارش 2</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="#">
+                                                <span class="menu-title">گزارش 3</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#">
+                                    <span class="menu-icon">
+                                        <i class="ri-book-2-fill"></i>
+                                    </span>
+                                    <span class="menu-title">اسناد</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">
+                                    <span class="menu-icon">
+                                        <i class="ri-calendar-fill"></i>
+                                    </span>
+                                    <span class="menu-title">زمان بندی</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+                <div class="sidebar-footer" style="direction:rtl;justify-content:center;"><span>وزارت نفت</span></div>
+            </div>
+        </aside>
+        <div id="overlay" class="overlay"></div>
+        <div class="layout">
+            <header class="header">
+                <a id="btn-collapse" href="#">
+                    <i class="ri-menu-line ri-xl"></i>
+                </a>
+                <a id="btn-toggle" href="#" class="sidebar-toggler break-point-lg">
+                    <i class="ri-menu-line ri-xl"></i>
+                </a>
+            </header>
+                <main class="content">
+                    <h2 style="float:right" dir="rtl">اطلاعات حقوق و پرسنل</h2>
+
+                    <div>
+                        <div class="warpper">
+                            <input class="radio" id="one" name="group" type="radio" checked>
+                            <input class="radio" id="two" name="group" type="radio">
+                            <input class="radio" id="three" name="group" type="radio">
+                            <div class="tabs">
+                                <label class="tab" id="one-tab" for="one">اطلاعات حقوق</label>
+                                <label class="tab" id="two-tab" for="two">اطلاعات پرسنلی</label>
+                                <label class="tab" id="three-tab" for="three">روند بارگذاری</label>
+                            </div>
+                            <div class="panels">
+                                <div class="panel" id="one-panel">
+                                    <div class="panel-title"></div>
+
+                                    <p>
+                                        در این صورت  پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد
+
+                                    </p>
+                                    @RenderBody()
+                                </div>
+                                <div class="panel" id="two-panel">
+                                    <div class="panel-title"></div>
+                                    <p>متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته</p>
+                                </div>
+                                <div class="panel" id="three-panel">
+                                    <div class="panel-title"></div>
+                                    <p> ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h1>ویدیوی آموزشی</h1>
+                        <p>
+                            ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته
+                        </p>
+                        <p>
+                            ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته  <a href="https://karmandiran.ir/">سامانه کارمند ایران</a>
+                        </p>
+                        <div>
+                            <a href="https://karmandiran.ir/" target="_self">
+                                <img src="~/images/karmand-iran-green.svg" />
+                            </a>
+                            <a href="https://karmandiran.ir/" target="_blank">
+                                <img src="~/images/1648707142.svg" />
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>مراحل</h2>
+                        <ul>
+                            <li>با هدف بهبود ابزارهای کاربردی</li>
+                            <li>کتابهای زیادی در شصت و سه درصد گذشته</li>
+                            <li>در این صورت  پیوسته اهل دنیای</li>
+                            <li>ابزارهای کاربردی می باشد</li>
+                            <li>شامل حروفچینی دستاوردهای اصلی و جوابگوی</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>توضیحات </h2>
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://karmandiran.ir/">
+                                    کتابهای زیادی در شصت
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://karmandiran.ir/"> دستاوردهای اصلی و جوابگوی</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://karmandiran.ir/"> بهبود ابزارهای کاربردی</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <footer class="footer">
+                        <small style="margin-bottom: 20px; display: inline-block">
+                            1400©
+                            <span style="color: red; font-size: 18px">&#8618;</span>
+                            <br />
+                            <a target="_blank" href=""> وزارت نفت </a>
+                        </small>
+                        <br />
+                        <div>
+                            <a href="https://karmandiran.ir/" target="_blank" rel="noopener noreferrer">
+                                <img src="~/images/star-line.png" />
+                            </a>
+                            <a href="https://karmandiran.ir/" target="_blank" rel="noopener noreferrer">
+                                <img src="~/images/bar-chart-grouped-line.png" />
+                            </a>
+                        </div>
+                    </footer>
+                </main>
+                <div class="overlay"></div>
+            </div>
+        </div>
+    <!-- partial -->
+    @*<script src='https://unpkg.com/@popperjs/core@2'></script>*@
+    <script src="~/Styles/script6.js"></script>
+    <script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Styles/flexslider.css" rel="stylesheet" />
+    <link href="~/Styles/font-awesome.css" rel="stylesheet" />
+    <link href="~/Styles/bootstrap.css" rel="stylesheet" />
+    <script src="~/js/move-top.js"></script>
+    <script src="~/js/numscroller-1.0.js"></script>
+    <script src="~/js/jquery.flexslider.js"></script>
+    <script src="~/js/jzBox.js"></script>
+    <script src="~/js/easing.js"></script>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            @*<li>@Html.ActionLink("خروج", "Login", "Account")</li>*@
+            <li>
+                <button onclick="location.href='@Url.Action("login", "Account")'">خروج</button>
+            </li>
+        </ul>
+
+    </div>
+</head>
+<body>
+    <div>
+        <link href="~/Styles/bootstrap.css" rel="stylesheet" />
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Login.Employee>
+@{ ViewBag.Title = "نمایش و دانلود";
+    Layout = "~/Views/_LayoutPage3.cshtml"; }
+<center style="padding:10px;margin:10px">
+    <h2>دانلود فایل</h2>
+    <hr />
+    @*<p>  @ViewBag.uu</p>*@
+
+    @{ WebGrid wbgrid = new WebGrid(source: Model, rowsPerPage: 5); }
+
+    @wbgrid.GetHtml(
+                                tableStyle: "table table-striped",
+                                htmlAttributes: new { @id = "wbgrid" },
+                                columns: wbgrid.Columns(wbgrid.Column("Reg", "RegNum"),
+                               wbgrid.Column("CompanyCodee", "CompanyCode"),
+                               wbgrid.Column("PayrollCodee", "PayrollCode"),
+                               wbgrid.Column("Statement", "Statement"),
+                               wbgrid.Column("Personel", "Personel")
+                               ))
+
+        <center style="padding:20px">
+            <a href="@Url.Action("ExporttoExcel","Account")">دانلود اکسل حقوق</a>
+            <div>
+                <dl class="dl-horizontal">
+                    @Html.ActionLink("برگشت به صفحه ورود", "login")
+                </dl>
+            </div>
+        </center>
+    </center>

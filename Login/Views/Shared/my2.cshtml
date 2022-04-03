@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Styles/style3.css" rel="stylesheet" />
+    <link href="~/Styles/bootstrap.css" rel="stylesheet" />
+    <link href="~/Styles/font-awesome.css" rel="stylesheet" />
+    <script src="~/js/jquery-2.2.3.min.js"></script>
+    <script src="~/js/easyResponsiveTabs.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true   // 100% fit in a container
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function (c) {
+            $('.close').on('click', function (c) {
+                $('.header').fadeOut('slow', function (c) {
+                    $('.header').remove();
+                });
+            });
+        });
+    </script>
+    <title>@ViewBag.Title</title>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            @*<li>@Html.ActionLink("خروج", "Login", "Account")</li>*@
+            <li>
+                <button onclick="location.href='@Url.Action("login", "Account")'">خروج</button>
+            </li>
+        </ul>
+
+    </div>
+</head>
+<body>
+    <div>
+        
+            
+            @RenderBody()
+        </div>
+</body>
+</html>
